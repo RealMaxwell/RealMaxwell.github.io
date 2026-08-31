@@ -1,50 +1,631 @@
-<section class="section">
+<!DOCTYPE html>
+<html lang="en">
 
-  <h2>ICON & IMAGES</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="images-grid">
+  <title>ONO: Think Straight | Real Maxwell</title>
 
-    <div class="image-card">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      <img
-        src="images/ONOBanner.jpg"
-        alt="ONO Think Straight promotional banner"
-      >
+    html {
+      scroll-behavior: smooth;
+    }
 
-      <div class="image-caption">
-        ONO: THINK STRAIGHT
-      </div>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #3f3f3f;
+      background: #f4f4f2;
+    }
 
-    </div>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
+    /* Announcement Bar */
 
-    <div class="image-card">
+    .announcement {
+      background: #827b77;
+      color: white;
+      text-align: center;
+      padding: 7px 15px;
+      font-size: 14px;
+    }
 
-      <img
-        src="images/weArePlay_Real.jpg"
-        alt="Real Maxwell Google We Are Play feature"
-      >
+    /* Header */
 
-      <div class="image-caption">
-        GOOGLE #WEAREPLAY — MISSISSIPPI
-      </div>
+    .header {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 6%;
+      border-bottom: 1px solid #e8e8e8;
+    }
 
-    </div>
+    .brand {
+      font-size: 24px;
+      letter-spacing: 4px;
+      font-weight: 500;
+    }
 
+    .nav {
+      display: flex;
+      gap: 34px;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+    }
 
-    <div class="image-card">
+    .nav a:hover {
+      opacity: .55;
+    }
 
-      <img
-        src="images/ONOIcon.png"
-        alt="ONO Think Straight icon"
-      >
+    /* Page Title */
 
-      <div class="image-caption">
-        ONO ICON
-      </div>
+    .page-title {
+      background: #171b1e;
+      color: white;
+      text-align: center;
+      padding: 54px 20px;
+    }
 
-    </div>
+    .page-title h1 {
+      margin: 0;
+      font-size: 44px;
+      letter-spacing: 2px;
+    }
 
+    /* Main Content */
+
+    .content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 7% 80px;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 360px;
+      display: block;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 24px;
+      letter-spacing: 3px;
+      margin: 0 0 25px;
+    }
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-top: 0;
+    }
+
+    p,
+    li {
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* Quick Facts */
+
+    .quick-facts p {
+      margin: 8px 0;
+    }
+
+    /* Store Badges */
+
+    .stores {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .stores img {
+      display: block;
+      width: auto;
+    }
+
+    .apple-badge {
+      height: 52px;
+    }
+
+    .google-badge {
+      height: 78px;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-top: 65px;
+    }
+
+    .feature-list {
+      padding-left: 22px;
+    }
+
+    .feature-list li {
+      margin-bottom: 9px;
+    }
+
+    /* Video */
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      background: #000;
+      margin-top: 25px;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Press Images */
+
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      align-items: start;
+      margin-top: 30px;
+    }
+
+    .images-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-card {
+      background: white;
+      padding: 18px;
+      border: 1px solid #e1e1e1;
+    }
+
+    .image-caption {
+      margin-top: 12px;
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #181b1e;
+      color: #eee;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 13px;
+      letter-spacing: .8px;
+    }
+
+    .footer-links {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 12px;
+      letter-spacing: 1.4px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 800px) {
+
+      .header {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .page-title h1 {
+        font-size: 34px;
+      }
+
+      .top-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .images-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Announcement -->
+
+  <div class="announcement">
+    ONO: Think Straight — Now available FREE on the Apple App Store & Google Play Store!
   </div>
 
-</section>
+
+  <!-- Header -->
+
+  <header class="header">
+
+    <div class="brand">
+      REAL MAXWELL
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">GAME DEVELOPMENT</a>
+      <a href="ono.html">INFO / PRESS</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+
+  </header>
+
+
+  <!-- Page Title -->
+
+  <section class="page-title">
+    <h1>ONO: THINK STRAIGHT</h1>
+  </section>
+
+
+  <!-- Main Content -->
+
+  <main class="content">
+
+
+    <!-- Logo and Quick Facts -->
+
+    <section class="top-grid">
+
+      <div>
+
+        <img
+          class="logo"
+          src="images/ONOIcon.png"
+          alt="ONO Think Straight logo"
+        >
+
+      </div>
+
+
+      <div class="quick-facts">
+
+        <h2>QUICK FACTS</h2>
+
+        <p><strong>Developer:</strong> Real Maxwell</p>
+
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:real@realmaxwell.com">
+            real@realmaxwell.com
+          </a>
+        </p>
+
+        <p><strong>v4.20 Release Date:</strong> 2026</p>
+
+        <p><strong>Price:</strong> Free</p>
+
+        <p><strong>Platform:</strong> iOS / Android</p>
+
+        <p><strong>Rating:</strong> E for Everyone</p>
+
+
+        <div class="stores">
+
+          <!-- Apple App Store -->
+
+          <a
+            href="https://apps.apple.com/us/app/ono-think-straight/id1533608908"
+            target="_blank"
+            rel="noopener"
+            aria-label="Download ONO on the App Store"
+          >
+
+            <img
+              class="apple-badge"
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="Download on the App Store"
+            >
+
+          </a>
+
+
+          <!-- Google Play -->
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.RealMaxwellLLC.ONO"
+            target="_blank"
+            rel="noopener"
+            aria-label="Get ONO on Google Play"
+          >
+
+            <img
+              class="google-badge"
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+              alt="Get it on Google Play"
+            >
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Description -->
+
+    <section class="section">
+
+      <h2>DESCRIPTION</h2>
+
+      <p>
+        <strong>THINK STRAIGHT.</strong>
+      </p>
+
+      <p>
+        ONO: Think Straight is a minimalist pattern recognition brain
+        defogger puzzle game. A brand new kind of puzzle that relies on
+        your most basic brain functions — motion and prediction.
+      </p>
+
+      <p>
+        Below the words of Wordle. Beneath the math of Sudoku.
+      </p>
+
+      <p>
+        Start a chain reaction that will leave no O's on the screen (O=NO).
+      </p>
+
+    </section>
+
+
+    <!-- Features -->
+
+    <section class="section">
+
+      <h2>FEATURES</h2>
+
+      <ul class="feature-list">
+
+        <li>
+          Lots of satisfying puzzles for you to solve.
+        </li>
+
+        <li>
+          24 levels for you to master from very easy to very challenging.
+        </li>
+
+        <li>
+          You master a level by solving 4 puzzles, the last in a single try.
+        </li>
+
+        <li>
+          Levels you have mastered are open for free play.
+        </li>
+
+        <li>
+          Harder levels have 1000's of unique puzzles for you to try.
+        </li>
+
+        <li>
+          Rack up points, work on a one-shot streak, or beat your fastest time.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- Brain Work -->
+
+    <section class="section">
+
+      <h2>BRAIN WORK</h2>
+
+      <ul class="feature-list">
+
+        <li>Working memory.</li>
+
+        <li>Pattern recognition.</li>
+
+        <li>Mental model creation and comparison.</li>
+
+        <li>Motion prediction.</li>
+
+        <li>Focus / Attention.</li>
+
+        <li>Speed.</li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- How To Play -->
+
+    <section class="section">
+
+      <h2>HOW TO PLAY</h2>
+
+      <p>
+        You solve a puzzle by choosing the O that will cause a chain reaction
+        that will destroy all the others. Master each level by solving four
+        puzzles — you are allowed three tries in each of the first two, two
+        tries in the next one and, finally, you must solve one puzzle in a
+        single try.
+      </p>
+
+      <p>
+        The level is then open for free play with three tries forever. You
+        have an opportunity to watch a :30 ad (or remove ads for .99) to get
+        2X points on this level to help you run up your score.
+      </p>
+
+      <p>
+        Locked levels can be unlocked early by watching a video ad.
+      </p>
+
+      <p>
+        Larger levels have 1000's of puzzle variations for endless play.
+      </p>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section class="section">
+
+      <h2>ABOUT REAL MAXWELL</h2>
+
+      <p>
+        Self-taught solo game developer. Older than most.
+      </p>
+
+    </section>
+
+
+    <!-- Video -->
+
+    <section class="section">
+
+      <h2>ONO: THINK STRAIGHT LEVEL EXAMPLES</h2>
+
+      <div class="video-wrap">
+
+        <iframe
+          src="https://www.youtube.com/embed/VeVRFuy-uH4"
+          title="ONO: Think Straight Trailer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+      </div>
+
+    </section>
+
+
+    <!-- Press Images -->
+
+    <section class="section">
+
+      <h2>ICON & IMAGES</h2>
+
+
+      <div class="images-grid">
+
+
+        <!-- ONO Banner -->
+
+        <div class="image-card">
+
+          <img
+            src="images/ONOBanner.jpg"
+            alt="ONO Think Straight promotional banner"
+          >
+
+          <div class="image-caption">
+            ONO: THINK STRAIGHT
+          </div>
+
+        </div>
+
+
+        <!-- We Are Play -->
+
+        <div class="image-card">
+
+          <img
+            src="images/weArePlay_Real.jpg"
+            alt="Real Maxwell Google We Are Play feature"
+          >
+
+          <div class="image-caption">
+            GOOGLE #WEAREPLAY — MISSISSIPPI
+          </div>
+
+        </div>
+
+
+        <!-- ONO Icon -->
+
+        <div class="image-card">
+
+          <img
+            src="images/ONOIcon.png"
+            alt="ONO Think Straight icon"
+          >
+
+          <div class="image-caption">
+            ONO ICON
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div>
+      Copyright © 2026 REAL MAXWELL LLC · All Rights Reserved.
+    </div>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        GAME DEVELOPMENT
+      </a>
+
+      <a href="index.html#contact">
+        CONTACT
+      </a>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
