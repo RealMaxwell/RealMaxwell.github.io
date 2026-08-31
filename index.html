@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +28,8 @@
       text-decoration: none;
     }
 
+    /* Announcement Bar */
+
     .announcement {
       background: #827b77;
       color: white;
@@ -35,6 +38,8 @@
       font-size: 14px;
       letter-spacing: .2px;
     }
+
+    /* Header */
 
     .header {
       background: white;
@@ -61,6 +66,8 @@
     .nav a:hover {
       opacity: .55;
     }
+
+    /* ONO Hero */
 
     .hero {
       background: #171b1e;
@@ -101,6 +108,8 @@
       margin-bottom: 28px;
     }
 
+    /* Buttons */
+
     .button {
       display: inline-block;
       background: #8a817c;
@@ -115,6 +124,8 @@
       opacity: .8;
     }
 
+    /* Store Badges */
+
     .stores {
       display: flex;
       justify-content: center;
@@ -126,17 +137,25 @@
 
     .stores img {
       display: block;
-      height: 58px;
       width: auto;
     }
+
+    .stores .apple-badge {
+      height: 58px;
+    }
+
+    .stores .google-badge {
+      height: 86px;
+    }
+
+    /* Games Information */
 
     .info {
       padding: 75px 8% 85px;
       background: #f1f1ef;
     }
 
-    .info h2,
-    .social h2 {
+    .info h2 {
       text-align: center;
       letter-spacing: 5px;
       font-size: 31px;
@@ -170,38 +189,7 @@
       margin: auto;
     }
 
-    .social {
-      text-align: center;
-      padding: 55px 20px 65px;
-      background: #ecebe8;
-    }
-
-    .social h2 {
-      margin-bottom: 28px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-    }
-
-    .social-link {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #222;
-      color: white;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .youtube {
-      background: #d82424;
-    }
+    /* Footer */
 
     footer {
       background: #181b1e;
@@ -221,7 +209,10 @@
       letter-spacing: 1.4px;
     }
 
+    /* Mobile */
+
     @media (max-width: 800px) {
+
       .header {
         flex-direction: column;
         gap: 22px;
@@ -248,53 +239,77 @@
         flex-wrap: wrap;
       }
 
-      .stores img {
-        height: 50px;
-      }
-
       .info-grid {
         grid-template-columns: 1fr;
         gap: 65px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
+  <!-- Announcement -->
+
   <div class="announcement">
     ONO: Think Straight — Now available FREE on the Apple App Store & Google Play Store!
   </div>
 
+
+  <!-- Header -->
+
   <header class="header">
-    <div class="brand">REAL MAXWELL</div>
+
+    <div class="brand">
+      REAL MAXWELL
+    </div>
 
     <nav class="nav">
-      <a href="#game-development">GAME DEVELOPMENT</a>
-      <a href="#">SILVER MIRRORS</a>
-      <a href="#contact">CONTACT</a>
+      <a href="index.html">GAME DEVELOPMENT</a>
+      <a href="ono.html">INFO / PRESS</a>
+      <a href="index.html#contact">CONTACT</a>
     </nav>
+
   </header>
 
+
   <main>
+
+    <!-- ONO -->
 
     <section class="hero" id="game-development">
 
       <div class="hero-image">
-        <img src="images/ONOIcon.png" alt="ONO Think Straight logo">
+
+        <img
+          src="images/ONOIcon.png"
+          alt="ONO Think Straight logo"
+        >
+
       </div>
 
       <div class="hero-copy">
-        <h1>ONO: THINK<br>STRAIGHT 2.0</h1>
 
-        <div class="year">2026</div>
+        <h1>
+          ONO: THINK<br>
+          STRAIGHT 2.0
+        </h1>
+
+        <div class="year">
+          2026
+        </div>
 
         <a class="button" href="ono.html">
           INFO | PRESS
         </a>
+
       </div>
 
     </section>
+
+
+    <!-- App Stores -->
 
     <section class="stores">
 
@@ -304,11 +319,15 @@
         rel="noopener"
         aria-label="Download ONO on the App Store"
       >
+
         <img
+          class="apple-badge"
           src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
           alt="Download on the App Store"
         >
+
       </a>
+
 
       <a
         href="https://play.google.com/store/apps/details?id=com.RealMaxwellLLC.ONO"
@@ -316,57 +335,78 @@
         rel="noopener"
         aria-label="Get ONO on Google Play"
       >
+
         <img
+          class="google-badge"
           src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
           alt="Get it on Google Play"
         >
+
       </a>
 
     </section>
 
+
+    <!-- Games Information -->
+
     <section class="info" id="contact">
 
-      <h2>GAMES INFORMATION</h2>
+      <h2>
+        GAMES INFORMATION
+      </h2>
+
 
       <div class="info-grid">
 
-        <div class="info-block">
-          <h3>SUPPORT - CONTACT</h3>
+        <!-- Contact -->
 
-          <a class="button" href="mailto:real@realmaxwell.com">
+        <div class="info-block">
+
+          <h3>
+            SUPPORT - CONTACT
+          </h3>
+
+          <a
+            class="button"
+            href="mailto:real@realmaxwell.com"
+          >
             EMAIL
           </a>
+
         </div>
 
+
+        <!-- Privacy -->
+
         <div class="info-block">
-          <h3>PRIVACY POLICY</h3>
+
+          <h3>
+            PRIVACY POLICY
+          </h3>
 
           <div class="privacy">
+
             Real Maxwell LLC does not collect personal information.
+
             <br><br>
+
             If I have any of your personal information I will not willingly
             sell or give it to anyone except if lawfully subpoenaed to produce
             it and then only after offering you a reasonable chance to
             challenge such subpoena if allowed by law.
+
           </div>
+
         </div>
 
-      </div>
-
-    </section>
-
-    <section class="social">
-
-      <h2>SOCIAL</h2>
-
-      <div class="social-links">
-        <a class="social-link" href="#" aria-label="X">X</a>
-        <a class="social-link youtube" href="#" aria-label="YouTube">▶</a>
       </div>
 
     </section>
 
   </main>
+
+
+  <!-- Footer -->
 
   <footer>
 
@@ -375,14 +415,19 @@
     </div>
 
     <div class="footer-links">
-      <a href="#contact">PRIVACY</a>
+
+      <a href="index.html#contact">
+        PRIVACY
+      </a>
 
       <a href="https://apps.apple.com/us/app/ono-think-straight/id1533608908">
         DOWNLOAD ONO FREE
       </a>
+
     </div>
 
   </footer>
 
 </body>
+
 </html>
