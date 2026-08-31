@@ -1,10 +1,386 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Real Maxwell</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Real Maxwell</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #3f3f3f;
+      background: #f4f4f2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .announcement {
+      background: #827b77;
+      color: white;
+      text-align: center;
+      padding: 7px 15px;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+
+    .header {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 6%;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .brand {
+      font-size: 24px;
+      letter-spacing: 4px;
+      font-weight: 500;
+    }
+
+    .nav {
+      display: flex;
+      gap: 34px;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      font-style: italic;
+    }
+
+    .nav a:hover {
+      opacity: .55;
+    }
+
+    .hero {
+      background: #171b1e;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      min-height: 430px;
+      padding: 35px 8%;
+      gap: 70px;
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    .hero-copy {
+      text-align: center;
+    }
+
+    .hero-copy h1 {
+      font-size: 46px;
+      line-height: 1.08;
+      letter-spacing: 2px;
+      margin: 0 0 20px;
+      font-style: italic;
+    }
+
+    .year {
+      font-size: 16px;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #8a817c;
+      color: white;
+      padding: 13px 24px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: opacity .2s ease;
+    }
+
+    .button:hover {
+      opacity: .8;
+    }
+
+    .stores {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 110px;
+      padding: 44px 20px;
+      background: #f4f4f2;
+    }
+
+    .stores img {
+      display: block;
+      height: 58px;
+      width: auto;
+    }
+
+    .info {
+      padding: 75px 8% 85px;
+      background: #f1f1ef;
+    }
+
+    .info h2,
+    .social h2 {
+      text-align: center;
+      letter-spacing: 5px;
+      font-size: 31px;
+      margin: 0 0 70px;
+      font-weight: 600;
+    }
+
+    .info-grid {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .info-block {
+      text-align: center;
+    }
+
+    .info-block h3 {
+      font-size: 23px;
+      letter-spacing: 4px;
+      margin: 0 0 28px;
+      font-style: italic;
+    }
+
+    .privacy {
+      font-size: 18px;
+      line-height: 1.45;
+      font-style: italic;
+      max-width: 520px;
+      margin: auto;
+    }
+
+    .social {
+      text-align: center;
+      padding: 55px 20px 65px;
+      background: #ecebe8;
+    }
+
+    .social h2 {
+      margin-bottom: 28px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .social-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #222;
+      color: white;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .youtube {
+      background: #d82424;
+    }
+
+    footer {
+      background: #181b1e;
+      color: #eee;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 13px;
+      letter-spacing: .8px;
+    }
+
+    .footer-links {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 12px;
+      letter-spacing: 1.4px;
+    }
+
+    @media (max-width: 800px) {
+      .header {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 8%;
+      }
+
+      .hero-copy h1 {
+        font-size: 36px;
+      }
+
+      .stores {
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .stores img {
+        height: 50px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Real Maxwell</h1>
-    <p>Website test — it works.</p>
+
+  <div class="announcement">
+    ONO: Think Straight — Now available FREE on the Apple App Store & Google Play Store!
+  </div>
+
+  <header class="header">
+    <div class="brand">REAL MAXWELL</div>
+
+    <nav class="nav">
+      <a href="#game-development">GAME DEVELOPMENT</a>
+      <a href="#">SILVER MIRRORS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="game-development">
+      <div class="hero-image">
+        <img src="images/ONOIcon.png" alt="ONO Think Straight logo">
+      </div>
+
+      <div class="hero-copy">
+        <h1>ONO: THINK<br>STRAIGHT 2.0</h1>
+        <div class="year">2026</div>
+
+        <a class="button" href="ono.html">
+          INFO | PRESS
+        </a>
+      </div>
+    </section>
+
+    <section class="stores">
+
+      <a
+        href="https://apps.apple.com/us/app/ono-think-straight/id1533608908"
+        target="_blank"
+        rel="noopener"
+        aria-label="Download ONO on the App Store"
+      >
+        <img
+          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+          alt="Download on the App Store"
+        >
+      </a>
+
+      <a
+        href="https://play.google.com/store/apps/details?id=com.RealMaxwellLLC.ONO"
+        target="_blank"
+        rel="noopener"
+        aria-label="Get ONO on Google Play"
+      >
+        <img
+          src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+          alt="Get it on Google Play"
+        >
+      </a>
+
+    </section>
+
+    <section class="info" id="contact">
+
+      <h2>GAMES INFORMATION</h2>
+
+      <div class="info-grid">
+
+        <div class="info-block">
+          <h3>SUPPORT - CONTACT</h3>
+
+          <a class="button" href="mailto:real@realmaxwell.com">
+            EMAIL
+          </a>
+        </div>
+
+        <div class="info-block">
+          <h3>PRIVACY POLICY</h3>
+
+          <div class="privacy">
+            Real Maxwell LLC does not collect personal information.
+            <br><br>
+            If I have any of your personal information I will not willingly
+            sell or give it to anyone except if lawfully subpoenaed to produce
+            it and then only after offering you a reasonable chance to
+            challenge such subpoena if allowed by law.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="social">
+
+      <h2>SOCIAL</h2>
+
+      <div class="social-links">
+        <a class="social-link" href="#" aria-label="X">X</a>
+        <a class="social-link youtube" href="#" aria-label="YouTube">▶</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      Copyright © 2026 REAL MAXWELL LLC · All Rights Reserved.
+    </div>
+
+    <div class="footer-links">
+      <a href="#contact">PRIVACY</a>
+      <a href="https://apps.apple.com/us/app/ono-think-straight/id1533608908">
+        DOWNLOAD ONO FREE
+      </a>
+    </div>
+  </footer>
+
 </body>
 </html>
